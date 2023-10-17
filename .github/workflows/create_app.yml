@@ -1,9 +1,7 @@
 name: Build React App
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -16,7 +14,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14 # Cambia la versión de Node.js si es necesario
+          node-version: 14
 
       - name: Install dependencies
         run: npm install
@@ -29,3 +27,4 @@ jobs:
         with:
           name: build-artifacts
           path: build
+          
